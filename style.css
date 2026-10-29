@@ -3,3 +3,20 @@
 .record{margin:0;padding:0 20px 14px;font-size:12px}.level{display:block;font-size:10px;font-weight:500;margin-top:4px}#grid td{font-size:16px;padding:12px 2px}#grid th{padding:8px 2px}
 
 .entryguide{background:#e4f2f2;border:1px solid #c6e3e1;border-radius:12px;padding:18px;margin:20px 0}.entryguide strong{font-size:14px}.entryguide p{margin:8px 0}.entryguide small{font-size:12px;color:#587582}@media(max-width:600px){.cardhead{flex-wrap:wrap;gap:12px}.cardhead button{margin-left:auto}}
+
+/* Compact mobile editor; keep inputs readable without focus zoom. */
+@media(max-width:600px){
+ #edit{width:calc(100% - 24px);max-width:440px;max-height:82vh;max-height:82dvh;padding:16px;border-radius:12px;overscroll-behavior:contain}
+ #edit #form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}
+ #edit h2{grid-column:1/-1;font-size:18px;line-height:1.35;margin:0 0 2px}
+ #edit label{margin:0;font-size:11px;line-height:1.4}
+ #edit label:first-of-type,#edit label:last-of-type{grid-column:1/-1}
+ #edit input,#edit select{font-size:16px;line-height:1.25;min-height:40px;padding:8px 10px;margin-top:4px}
+ #edit p{grid-column:1/-1;font-size:11px;line-height:1.5;margin:0}
+ #edit #grid,#edit .head{grid-column:1/-1;min-width:0}
+ #edit #grid th{font-size:11px;padding:6px 2px}
+ #edit #grid td{font-size:14px;padding:7px 2px}
+ #edit #error:empty{display:none}
+ #edit .head{position:sticky;bottom:-16px;background:white;padding:10px 0 max(4px,env(safe-area-inset-bottom));margin:0;gap:8px;border-top:1px solid #eaf0f3}
+ #edit .head button{min-height:42px;padding:10px 12px;font-size:12px}
+}
