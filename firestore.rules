@@ -8,7 +8,8 @@ service cloud.firestore {
         && request.auth.token.firebase.sign_in_provider == 'google.com';
     }
     function validBoard() {
-      return request.resource.data.keys().hasOnly(['rows', 'revision', 'updatedAt'])
+      return request.resource.data.keys().hasOnly(['rows', 'menus', 'revision', 'updatedAt'])
+        && (!('menus' in request.resource.data) || (request.resource.data.menus is list && request.resource.data.menus.size() > 0 && request.resource.data.menus.size() <= 30))
         && request.resource.data.rows is list
         && request.resource.data.rows.size() <= 100
         && request.resource.data.revision is int
@@ -18,7 +19,9 @@ service cloud.firestore {
       allow get: if true;
       allow list: if false;
       allow create: if admin() && validBoard() && request.resource.data.revision == 1;
-      allow update: if admin() && validBoard() && request.resource.data.revision == resource.data.revision + 1;
+      allow update: if admin() && validBoard()
+        && (!('menus' in resource.data) || 'menus' in request.resource.data)
+        && request.resource.data.revision == resource.data.revision + 1;
       allow delete: if false;
     }
   }
