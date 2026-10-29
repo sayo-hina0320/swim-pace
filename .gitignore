@@ -1,0 +1,14 @@
+# Local private records, exports and environment files
+.env
+.env.*
+!.env.example
+private/
+exports/
+backups/
+*.csv
+*.xlsx
+*.json.bak
+.openai/
+node_modules/
+.DS_Store
+Thumbs.db
