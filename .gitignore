@@ -12,3 +12,6 @@ backups/
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Deployment-specific admin identity and Firebase web configuration
+firebase-config.js
