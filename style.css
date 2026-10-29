@@ -20,3 +20,6 @@
  #edit .head{position:sticky;bottom:-16px;background:white;padding:10px 0 max(4px,env(safe-area-inset-bottom));margin:0;gap:8px;border-top:1px solid #eaf0f3}
  #edit .head button{min-height:42px;padding:10px 12px;font-size:12px}
 }
+
+
+.strokecontrol{padding:0 20px 14px}.strokecontrol label{max-width:300px}.strokecontrol select{font-size:16px;min-height:42px;margin-top:5px;padding:8px 10px}#edit #grid .level{font-size:9px}@media(max-width:600px){.strokecontrol{padding:0 17px 12px}.strokecontrol label{max-width:none}.strokecontrol select{width:100%}}
